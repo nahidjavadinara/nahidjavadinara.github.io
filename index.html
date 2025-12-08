@@ -1,0 +1,243 @@
+/* --- Global Styles & Colors --- */
+:root {
+    --cv-blue: #304263;
+    --cv-light-blue: #4d6083;
+    --text-color: #333;
+    --font-sans: 'Fira Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    display: flex; /* Enables flexbox layout for sidebar and main content */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+h3 {
+    margin-top: 15px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Sidebar h3 separator */
+}
+
+/* --- Layout: Sidebar and Main Content --- */
+
+.sidebar {
+    width: 300px;
+    background-color: var(--cv-blue);
+    color: white;
+    padding: 20px 0;
+    position: sticky; /* Makes the sidebar stay when scrolling */
+    top: 0;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Allows scrolling within the sidebar if content is long */
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+.sidebar-content {
+    padding: 0 15px;
+}
+
+.main-content {
+    flex-grow: 1; /* Takes up the remaining space */
+    padding: 20px 40px;
+    background-color: #f4f4f4; /* Light background for the main timeline area */
+}
+
+/* --- Header Section (Right Side) --- */
+.header-section {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cv-blue);
+}
+
+.header-section h1 {
+    font-size: 2.2em;
+    color: var(--cv-blue);
+    letter-spacing: 1.5px;
+}
+
+.header-section h2 {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.summary {
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+
+/* --- Sidebar Specifics --- */
+.profile-photo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar .fa-solid, .sidebar .fa-brands {
+    margin-right: 8px;
+    width: 15px; /* Ensures alignment */
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.1em;
+}
+
+
+/* --- Timeline Structure --- */
+
+.timeline-section h3 {
+    color: var(--cv-blue);
+    font-size: 1.6em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--cv-blue);
+    padding-bottom: 5px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin-left: 20px; /* Space for the line and dots */
+}
+
+/* The vertical line in the center of the timeline section */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--cv-blue);
+    top: 0;
+    bottom: 0;
+    left: 0; /* Positioned on the left edge of the timeline container */
+}
+
+.timeline-event {
+    position: relative;
+    padding-left: 30px; /* Space for the dot */
+    margin-bottom: 30px;
+}
+
+/* The dot (timeline marker) for each event */
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid var(--cv-blue);
+    left: -7px; /* Positions the dot exactly over the line */
+    top: 5px;
+    z-index: 1; /* Ensures the dot is visible over the line */
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--cv-light-blue);
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.timeline-content h4 {
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+.timeline-content .company {
+    font-style: italic;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+.timeline-content ul {
+    list-style-type: '♦ '; /* Custom bullet point */
+    margin: 5px 0 0 20px;
+    padding: 0;
+    font-size: 0.9em;
+}
+
+.timeline-content ul li {
+    margin-bottom: 3px;
+}
+
+/* --- References Styling --- */
+.references-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.reference-box {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    border-left: 3px solid var(--cv-light-blue);
+    background-color: #e9e9e9;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments for Mobile/Smaller Screens --- */
+@media (max-width: 900px) {
+    body {
+        flex-direction: column; /* Stacks the sidebar above the main content */
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static; /* Makes it scrollable like the rest of the page */
+        padding: 15px 0;
+    }
+
+    .sidebar-content {
+        padding: 0 30px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    /* Adjust the timeline to look good when full width */
+    .timeline {
+        margin-left: 15px;
+    }
+}
