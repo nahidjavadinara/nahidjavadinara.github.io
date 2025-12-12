@@ -1,12 +1,26 @@
 /* --- Global Styles & Colors --- */
 :root {
-    --cv-blue: #304263; /* Deep Blue (like the original) */
-    --cv-accent: #8b008b; /* Deep Magenta/Purple - similar to the accent in Image 1 */
+    --cv-blue: #304263;            /* Primary */
+    --cv-accent: #8b008b;          /* Accent */
     --cv-light-blue: #4d6083;
-    --cv-background: #fcfcfc; /* Slightly brighter background */
-    --text-color: #333;
-    --font-sans: 'Fira Sans', sans-serif;
+    --cv-background: #fcfcfc;
+
+    --text-color: #2f2f2f;
+    --muted: #5f6470;
+
+    --card-bg: #ffffff;
+    --border: rgba(48, 66, 99, 0.14);
+
+    --radius: 12px;
+    --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.10);
+
+    --font-sans: 'Fira Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
+
+/* Optional: smoother rendering */
+html { -webkit-text-size-adjust: 100%; }
+* { box-sizing: border-box; }
 
 body {
     font-family: var(--font-sans);
@@ -14,223 +28,324 @@ body {
     padding: 0;
     background-color: var(--cv-background);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.65;
+    letter-spacing: 0.1px;
+}
+
+/* Global link treatment */
+a {
+    color: var(--cv-blue);
+    text-decoration: none;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+a:hover {
+    color: var(--cv-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(139, 0, 139, 0.35);
 }
 
 .main-content {
-    max-width: 1000px; /* Reduced max-width for better timeline focus */
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 28px 20px;
 }
 
-h1 { font-size: 3em; color: var(--cv-blue); margin-bottom: 0; font-weight: 900; } /* Bold Name */
-h2 { font-size: 2em; color: var(--cv-accent); margin-top: 5px; border-bottom: 3px solid var(--cv-light-blue); padding-bottom: 5px; } /* Accent Title */
-h3 { font-size: 1.3em; color: var(--cv-blue); margin-bottom: 10px; font-weight: 700;}
-h4 { font-size: 1.2em; margin-bottom: 5px; color: var(--cv-blue); } /* Job Titles */
+/* --- Typography --- */
+h1 {
+    font-size: clamp(2.3rem, 3.2vw, 3.2rem);
+    color: var(--cv-blue);
+    margin: 0 0 6px 0;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 2.1vw, 2.1rem);
+    color: var(--cv-accent);
+    margin: 10px 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgba(77, 96, 131, 0.35);
+    letter-spacing: -0.2px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--cv-blue);
+    margin: 0 0 10px;
+    font-weight: 750;
+}
+
+h4 {
+    font-size: 1.08rem;
+    margin: 0 0 6px;
+    color: var(--cv-blue);
+    font-weight: 750;
+}
 
 /* --- Header & Info Sections --- */
 .page-header {
-    background-color: #ffffff;
-    padding: 30px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* More defined shadow */
+    background-color: var(--card-bg);
+    padding: 34px 28px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     text-align: center;
 }
 
-.contact-bar, .social-links-bar {
-    margin: 15px 0;
-    font-size: 0.95em;
-    color: #555;
+.contact-bar,
+.social-links-bar {
+    margin: 14px 0 0;
+    font-size: 0.98em;
+    color: var(--muted);
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 18px 22px;
+    flex-wrap: wrap;
 }
 
 .social-links-bar a {
-    font-size: 1.1em;
+    font-size: 1.05em;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid transparent;
 }
+.social-links-bar a:hover {
+    border-color: rgba(139, 0, 139, 0.22);
+    background: rgba(139, 0, 139, 0.06);
+    text-decoration: none;
+}
+
 .summary {
-    margin-top: 20px;
+    margin-top: 18px;
     font-style: italic;
-    max-width: 800px;
+    color: var(--muted);
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .info-section {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    margin-bottom: 40px;
-    padding: 20px 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    gap: 26px;
+    margin: 26px 0 44px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .info-box {
     flex: 1;
-    min-width: 200px;
+    min-width: 220px;
 }
 
 .info-box h3 {
-    color: var(--cv-accent); /* Accent for sub-headings */
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+    color: var(--cv-accent);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.18);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
 }
 
-
-/* --- Core Timeline Structure (The Alternating Visual) --- */
-
+/* --- Core Timeline Structure --- */
 .timeline-section h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
 }
 
 .timeline {
     position: relative;
-    padding-bottom: 30px;
-    max-width: 900px; /* Adjust to match main content */
+    padding-bottom: 34px;
+    max-width: 920px;
     margin: 0 auto;
 }
 
-/* The Central Vertical Line */
+/* Central line: softer + refined */
 .timeline::after {
     content: '';
     position: absolute;
     width: 4px;
-    background-color: var(--cv-accent); /* Line color matches dot color */
+    background: linear-gradient(
+        to bottom,
+        rgba(139, 0, 139, 0.85),
+        rgba(139, 0, 139, 0.40)
+    );
     top: 0;
     bottom: 0;
     left: 50%;
     margin-left: -2px;
+    border-radius: 4px;
 }
 
 .timeline-event {
-    padding: 10px 0;
+    padding: 12px 0;
     position: relative;
-    min-height: 80px;
+    min-height: 88px;
 }
 
-/* Content Container for each event */
-.timeline-content {
-    background-color: #ffffff;
-    padding: 20px;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.timeline-content:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
-}
-
-.timeline-content ul {
-    list-style-type: '♦ ';
-    margin: 5px 0 0 20px;
-    padding: 0;
-    font-size: 0.9em;
-}
-
-/* Alternating Sides */
-.timeline-event:nth-child(odd) .timeline-content {
-    margin-right: 52%; /* Adjusted margin */
-}
-.timeline-event:nth-child(even) .timeline-content {
-    margin-left: 52%; /* Adjusted margin */
-}
-
-
-/* The Dot (Timeline Marker) for each event */
+/* Dot marker: more “designed” */
 .timeline-event::before {
     content: '';
     position: absolute;
-    width: 18px; /* Slightly larger dot */
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background-color: var(--cv-accent); /* Magenta/Purple Dot */
-    border: 3px solid var(--cv-background); /* White border to make it pop */
-    top: 25px;
+    background-color: var(--cv-accent);
+    border: 4px solid var(--cv-background);
+    top: 28px;
     left: 50%;
-    margin-left: -11px;
+    margin-left: -12px;
     z-index: 10;
+    box-shadow: 0 8px 16px rgba(139, 0, 139, 0.20);
 }
 
-/* Date Styling: Positioned inside the box */
+/* Card */
+.timeline-content {
+    background-color: var(--card-bg);
+    padding: 18px 18px 16px;
+    position: relative;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+/* Subtle “accent strip” without changing HTML */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 6px;
+    background: rgba(139, 0, 139, 0.55);
+}
+
+.timeline-content:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    border-color: rgba(139, 0, 139, 0.18);
+}
+
+/* Lists: cleaner bullets */
+.timeline-content ul {
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+    font-size: 0.95em;
+}
+.timeline-content li {
+    position: relative;
+    padding-left: 18px;
+    margin: 6px 0;
+}
+.timeline-content li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgba(139, 0, 139, 0.70);
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+/* Alternating sides */
+.timeline-event:nth-child(odd) .timeline-content {
+    margin-right: 52%;
+}
+.timeline-event:nth-child(even) .timeline-content {
+    margin-left: 52%;
+}
+
+/* Date + meta */
 .timeline-date {
-    font-weight: 700;
-    color: var(--cv-accent); /* Accent color for the date */
-    font-size: 0.9em;
-    margin-bottom: 5px;
-    letter-spacing: 0.5px;
+    font-weight: 800;
+    color: var(--cv-accent);
+    font-size: 0.82rem;
+    margin-bottom: 6px;
+    letter-spacing: 0.10em;
     text-transform: uppercase;
 }
 
 .timeline-content .company {
     font-style: italic;
-    color: #666;
-    font-size: 0.95em;
-    margin-bottom: 5px;
+    color: var(--muted);
+    font-size: 0.98em;
+    margin: 2px 0 8px;
 }
 
 /* --- References and Publications --- */
 .footer-sections h3 {
     color: var(--cv-blue);
-    margin-top: 30px;
-    border-bottom: 2px solid var(--cv-light-blue);
-    padding-bottom: 5px;
+    margin-top: 34px;
+    border-bottom: 2px solid rgba(77, 96, 131, 0.35);
+    padding-bottom: 8px;
 }
 
 .references-container {
     display: flex;
-    gap: 20px;
-    margin-top: 15px;
+    gap: 18px;
+    margin-top: 16px;
 }
 
 .reference-box {
     flex: 1;
-    padding: 15px;
-    border-left: 3px solid var(--cv-accent); /* Accent border */
-    background-color: #ffffff;
-    font-size: 0.9em;
+    padding: 16px 16px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    border-left: 4px solid rgba(139, 0, 139, 0.60);
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    font-size: 0.95em;
+    color: var(--muted);
 }
 
-
-/* --- Responsive Adjustments for Mobile/Smaller Screens --- */
+/* --- Responsive Adjustments --- */
 @media (max-width: 900px) {
     .page-header {
         text-align: left;
+        padding: 26px 18px;
     }
+
     .contact-bar, .social-links-bar {
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
+        gap: 8px;
     }
 
-    /* Collapse Info Boxes */
     .info-section {
         flex-direction: column;
+        gap: 18px;
     }
 
-    /* Collapse Timeline to Single Column */
     .timeline::after {
-        left: 10px;
+        left: 12px;
+        margin-left: 0;
     }
-    
+
     .timeline-event:nth-child(odd) .timeline-content,
     .timeline-event:nth-child(even) .timeline-content {
         margin-right: 0;
-        margin-left: 30px;
+        margin-left: 34px;
     }
 
     .timeline-event::before {
-        left: 10px;
-        margin-left: -11px;
+        left: 12px;
+        margin-left: -12px;
     }
-    
+
     .references-container {
         flex-direction: column;
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .timeline-content,
+    a {
+        transition: none;
     }
 }
