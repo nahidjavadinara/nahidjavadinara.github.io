@@ -1,9 +1,10 @@
+/* --- Curved Timeline (SVG) --- */
 .curved-timeline {
-  background: #fff;
+  background: #ffffff;
   border-radius: 16px;
   border: 1px solid rgba(0,0,0,.06);
   box-shadow: 0 10px 28px rgba(0,0,0,.08);
-  padding: 18px;
+  padding: 14px;
   overflow: hidden;
 }
 
@@ -16,50 +17,68 @@
 /* dotted curve */
 .tl-path {
   fill: none;
-  stroke: #111;
+  stroke: rgba(0,0,0,.78);
   stroke-width: 3;
   stroke-linecap: round;
-  stroke-dasharray: 1 10; /* dotted look */
-  opacity: 0.85;
+  stroke-dasharray: 1 10;
 }
 
 /* nodes */
 .tl-node .dot {
-  fill: #8b008b;            /* default */
   stroke: #fff;
   stroke-width: 4;
-  filter: drop-shadow(0 6px 10px rgba(139,0,139,.18));
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.10));
 }
 
-/* optional dot palette (like your sample) */
-.dot.c2  { fill: #4d6083; }
-.dot.c3  { fill: #7b5bd6; }
-.dot.c4  { fill: #b000b8; }
-.dot.c5  { fill: #ff3aa5; }
-.dot.c6  { fill: #23c9ff; }
-.dot.c7  { fill: #3c6df0; }
-.dot.c8  { fill: #7a63ff; }
-.dot.c9  { fill: #c000ff; }
-.dot.c10 { fill: #ff3aa5; }
-.dot.c11 { fill: #23c9ff; }
-.dot.c12 { fill: #3c6df0; }
-.dot.c13 { fill: #7a63ff; }
-.dot.c14 { fill: #c000ff; }
+/* palette similar to your example */
+.dot.c1 { fill: #23c9ff; }
+.dot.c2 { fill: #3c6df0; }
+.dot.c3 { fill: #7a63ff; }
+.dot.c4 { fill: #c000ff; }
+.dot.c5 { fill: #ff3aa5; }
+.dot.c6 { fill: #4d6083; }
+.dot.c7 { fill: #7b5bd6; }
+.dot.c8 { fill: #c000ff; }
 
-/* text */
 .year {
-  font: 800 18px/1.1 "Fira Sans", system-ui, sans-serif;
-  fill: #111;
+  font: 800 16px/1.2 var(--font-sans);
+  fill: rgba(0,0,0,.9);
+  letter-spacing: 0.02em;
 }
 
-.desc {
-  font: 500 12px/1.3 "Fira Sans", system-ui, sans-serif;
+.title {
+  font: 700 13px/1.25 var(--font-sans);
+  fill: rgba(0,0,0,.85);
+}
+
+.meta {
+  font: 500 12px/1.25 var(--font-sans);
   fill: rgba(0,0,0,.55);
 }
 
-/* mobile: reduce text size a bit */
-@media (max-width: 700px) {
-  .year { font-size: 16px; }
-  .desc { font-size: 11px; }
+/* Optional: details section */
+.timeline-details {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
 }
 
+.timeline-details-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.timeline-details-card ul {
+  margin: 8px 0 0 18px;
+}
+
+/* Responsive: simplify typography */
+@media (max-width: 800px) {
+  .year { font-size: 14px; }
+  .title { font-size: 12px; }
+  .meta { font-size: 11px; }
+}
