@@ -26,7 +26,6 @@
       <nav class="nav">
         <a href="#experience">EXPERIENCE</a>
         <a href="#education">EDUCATION</a>
-        <a href="#clients">CLIENTS</a>
         <a href="#skills">SKILLS</a>
         <a href="#expertise">EXPERTISE</a>
         <a href="#contact">CONTACT</a>
@@ -62,7 +61,7 @@
               </span>
             </div>
             <div class="meta-row">
-              <span class="meta-label">Address:</span>
+              <span class="meta-label">Location:</span>
               <span class="meta-value">Esch-sur-Alzette, Luxembourg</span>
             </div>
           </div>
@@ -79,7 +78,7 @@
         <a href="https://scholar.google.com/" target="_blank" rel="noreferrer" aria-label="Google Scholar">
           <i class="fa-solid fa-graduation-cap"></i>
         </a>
-        <a href="#" target="_blank" rel="noreferrer" aria-label="Email">
+        <a href="mailto:nahid.javadinarab.001@student.uni.lu" aria-label="Email">
           <i class="fa-solid fa-envelope"></i>
         </a>
       </div>
@@ -93,7 +92,7 @@
       <p class="section__lead">
         I am an AI/ML Engineer and Mathematical Modelling researcher with experience in clinical AI, financial
         document intelligence, and automation. My work focuses on Retrieval-Augmented Generation (RAG),
-        semantic embeddings, scalable data pipelines, and deploying reliable AI systems in production-oriented environments.
+        semantic embeddings, scalable data pipelines, and production-oriented AI delivery.
       </p>
     </div>
   </section>
@@ -102,6 +101,18 @@
   <section class="section" id="experience" aria-label="Experience">
     <div class="container section__inner">
       <h2 class="section__title">EXPERIENCE</h2>
+
+      <!-- Affiliations (logos belong here; NOT "clients") -->
+      <div class="affiliations" aria-label="Affiliations">
+        <div class="affiliations__label">AFFILIATIONS</div>
+        <div class="affiliations__logos">
+          <!-- Replace filenames if needed -->
+          <img src="assets/images/logo-unilu.png" alt="University of Luxembourg" />
+          <img src="assets/images/logo-lcsb.png" alt="LCSB" />
+          <img src="assets/images/amundi_fundchannel_vertical.png" alt="Amundi & Fund Channel" />
+          <img src="assets/images/logo-liser.png" alt="LISER" />
+        </div>
+      </div>
 
       <div class="timeline">
         <div class="timeline__item">
@@ -192,6 +203,17 @@
     <div class="container section__inner">
       <h2 class="section__title">EDUCATION</h2>
 
+      <!-- Affiliations (education logos) -->
+      <div class="affiliations" aria-label="Education Affiliations">
+        <div class="affiliations__label">AFFILIATIONS</div>
+        <div class="affiliations__logos">
+          <img src="assets/images/logo-unilu.png" alt="University of Luxembourg" />
+          <img src="assets/images/logo-sharif.png" alt="Sharif University of Technology" />
+          <!-- Optional: add Shahid Beheshti logo if you have it -->
+          <!-- <img src="assets/images/logo-sbu.png" alt="Shahid Beheshti University" /> -->
+        </div>
+      </div>
+
       <div class="timeline timeline--compact">
         <div class="timeline__item">
           <div class="timeline__left">
@@ -232,32 +254,6 @@
     </div>
   </section>
 
-  <!-- Clients / Affiliations -->
-  <section class="section" id="clients" aria-label="Clients">
-    <div class="container section__inner">
-      <h2 class="section__title">CLIENTS</h2>
-
-      <div class="clients">
-        <!-- Replace with your logos (SVG/PNG), or keep as text-only -->
-        <div class="client">
-          <img src="assets/images/logo-unilu.png" alt="University of Luxembourg" />
-        </div>
-        <div class="client">
-          <img src="assets/images/logo-lcsb.png" alt="LCSB" />
-        </div>
-        <div class="client">
-          <img src="assets/images/logo-amundi.png" alt="Amundi Fund Channel" />
-        </div>
-        <div class="client">
-          <img src="assets/images/logo-liser.png" alt="LISER" />
-        </div>
-        <div class="client">
-          <img src="assets/images/logo-sharif.png" alt="Sharif University of Technology" />
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Skills (dark band) -->
   <section class="section section--skills" id="skills" aria-label="Skills">
     <div class="skills__bg" role="img" aria-label="Skills background"></div>
@@ -291,23 +287,23 @@
           <h3>AI Document Intelligence</h3>
           <p>
             Structured extraction from PDFs using hybrid retrieval (RAG), embeddings, rule-based validation,
-            and LLM-based consolidation—optimized for multilingual financial and technical documents.
+            and LLM-based consolidation—optimized for multilingual documents.
           </p>
         </article>
 
         <article class="expertise-card">
           <h3>Mathematical Modelling</h3>
           <p>
-            Strong grounding in modelling, optimization, and statistical learning, enabling robust problem framing
-            and rigorous evaluation of AI systems in research and applied environments.
+            Strong grounding in modelling, optimization, and statistical learning, enabling rigorous
+            evaluation and reliable system design.
           </p>
         </article>
 
         <article class="expertise-card">
           <h3>Scalable AI Systems</h3>
           <p>
-            Production-oriented pipelines with CI/CD, automation, containerization, and HPC execution patterns,
-            emphasizing reliability, traceability, and maintainability.
+            Production-oriented pipelines with CI/CD, automation, containerization, and HPC execution patterns
+            emphasizing reliability and traceability.
           </p>
         </article>
       </div>
@@ -321,7 +317,7 @@
 
       <div class="contact-grid">
         <form class="contact-form" action="#" method="post">
-          <!-- To make this functional on GitHub Pages, replace action with Formspree endpoint -->
+          <!-- For GitHub Pages, replace action with a Formspree endpoint if you want it functional -->
           <label>
             <span>First Name *</span>
             <input type="text" name="first_name" required />
